@@ -1,0 +1,46 @@
+{
+  "name": "bennys-burgers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "author": "",
+  "scripts": {
+    "start": "run-p watch watch:styles",
+    "build": "run-s clean clean:styles build:styles copy",
+    "deploy": "run-s build publish",
+    "build:styles": "sass src/scss:src/styles",
+    "watch": "live-server src",
+    "watch:styles": "sass src/scss:src/styles --watch",
+    "clean": "rm -rf dist",
+    "clean:styles": "rm -rf src/styles",
+    "test": "npm run build && jest --detectOpenHandles",
+    "copy": "mkdir dist && rsync -avr --exclude=\"/scss\" --exclude=\"/__tests__\" src/ dist",
+    "publish": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "jest": "^28.1.0",
+    "puppeteer": "^14.0.0"
+  },
+  "autograding": {
+    "setup": "cd ./node_modules/puppeteer && npm run install"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1",
+    "live-server": "^1.2.1",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.54.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DigitalCareerInstitute/UIB_framework_bootstrap_benny-s-burgers",
+    "id": 228461173
+  }
+}

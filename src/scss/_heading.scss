@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "heading";
+  src: url(../fonts/LoveYaLikeASister-Regular.ttf);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: heading;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4.5rem;
+}
+
+h5 {
+  font-size: 2.5rem;
+}
+
+h6 {
+  font-size: 1.75rem;
+}
+
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: calc(2vw + 1rem);
+  }
+}
+@media screen and (max-width: 992px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+  }
+
+  h5 {
+    font-size: 2.5rem;
+  }
+
+  h6 {
+    font-size: 1.75rem;
+  }
+}
